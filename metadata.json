@@ -1,0 +1,8 @@
+{
+  "name": "Canopy — Intelligent Subscription Management",
+  "description": "Role-governed intelligent subscription management overlay for Canon Canada hardware maintenance, software licences, and managed IT services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

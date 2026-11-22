@@ -1,0 +1,2702 @@
+{
+  "users": [
+    {
+      "id": "canon-admin",
+      "name": "Elena Vance",
+      "title": "Subscription Governance Director",
+      "organization": "Canon Canada Inc.",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "avatarUrl": "/src/assets/images/avatar_canon_admin_1795291817771.jpg"
+    },
+    {
+      "id": "dealer-north",
+      "name": "Marcus Reid",
+      "title": "Regional Partner Executive",
+      "organization": "NorthStar Office Systems (Dealer A)",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "avatarUrl": "/src/assets/images/avatar_dealer_north_1795291816946.jpg"
+    },
+    {
+      "id": "dealer-pacific",
+      "name": "Priya Nair",
+      "title": "Enterprise Solutions Manager",
+      "organization": "Pacific Print & Cloud (Dealer B)",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "avatarUrl": "/src/assets/images/avatar_dealer_pacific_1795291816768.jpg"
+    },
+    {
+      "id": "customer-maple",
+      "name": "David Chen",
+      "title": "Director of IT Operations",
+      "organization": "Maple Ridge Legal LLP",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "avatarUrl": "/src/assets/images/avatar_customer_maple_1795291817372.jpg"
+    }
+  ],
+  "dealers": [
+    {
+      "id": "DLR-NORTH",
+      "name": "NorthStar Office Systems",
+      "region": "Ontario & Quebec",
+      "partnerTier": "Platinum",
+      "accountCode": "CA-ON-4410"
+    },
+    {
+      "id": "DLR-PACIFIC",
+      "name": "Pacific Print & Cloud",
+      "region": "British Columbia & Alberta",
+      "partnerTier": "Gold",
+      "accountCode": "CA-BC-7820"
+    }
+  ],
+  "customers": [
+    {
+      "id": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "organizationName": "Maple Ridge Legal LLP",
+      "contactName": "David Chen",
+      "address": "410 Bay Street, Suite 1200",
+      "city": "Toronto",
+      "province": "ON",
+      "email": "d.chen@mapleridgelegal.ca",
+      "phone": "416-555-0142",
+      "paymentInfo": "Corporate Visa •••• 4821 (Exp 09/28)",
+      "industry": "Legal Services"
+    },
+    {
+      "id": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "organizationName": "St. Lawrence Logistics Inc.",
+      "contactName": "Claire Moreau",
+      "address": "1250 René-Lévesque Blvd W, Suite 800",
+      "city": "Montreal",
+      "province": "QC",
+      "email": "cmoreau@stlawrencelogistics.ca",
+      "phone": "514-555-0189",
+      "paymentInfo": "EFT Commercial Mandate #QC-9012",
+      "industry": "Transportation & Freight"
+    },
+    {
+      "id": "CUST-003",
+      "dealerId": "DLR-NORTH",
+      "organizationName": "Boreal Architecture Group",
+      "contactName": "Liam O'Connor",
+      "address": "85 Albert Street, Floor 6",
+      "city": "Ottawa",
+      "province": "ON",
+      "email": "loconnor@borealarch.ca",
+      "phone": "613-555-0174",
+      "paymentInfo": "Mastercard Commercial •••• 3109",
+      "industry": "Architecture & Engineering"
+    },
+    {
+      "id": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "organizationName": "Cascadia Health Clinics",
+      "contactName": "Dr. Hannah Sato",
+      "address": "745 West Broadway, Suite 510",
+      "city": "Vancouver",
+      "province": "BC",
+      "email": "hsato@cascadiahealth.ca",
+      "phone": "604-555-0136",
+      "paymentInfo": "ACH Direct Debit #BC-5541",
+      "industry": "Healthcare"
+    },
+    {
+      "id": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "organizationName": "Foothills Energy Partners",
+      "contactName": "Trevor Brooks",
+      "address": "308 4th Avenue SW, Suite 1900",
+      "city": "Calgary",
+      "province": "AB",
+      "email": "tbrooks@foothillsenergy.ca",
+      "phone": "403-555-0163",
+      "paymentInfo": "Corporate Amex •••• 7742",
+      "industry": "Energy & Utilities"
+    },
+    {
+      "id": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "organizationName": "Harbourview Engineering Ltd.",
+      "contactName": "Nadia Kowalski",
+      "address": "910 Government Street, Suite 300",
+      "city": "Victoria",
+      "province": "BC",
+      "email": "nkowalski@harbourvieweng.ca",
+      "phone": "250-555-0118",
+      "paymentInfo": "EFT Commercial Mandate #BC-3318",
+      "industry": "Civil Engineering"
+    }
+  ],
+  "subscriptionTypes": [
+    {
+      "id": "hardware_maintenance",
+      "name": "Hardware with Maintenance",
+      "shortLabel": "Hardware & Service",
+      "description": "Canon multifunction devices and production presses with metered page allowances and SLA maintenance coverage.",
+      "fields": [
+        {
+          "key": "deviceModel",
+          "label": "Device Model",
+          "dataType": "string",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "dataType": "string",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "maintenanceStatus",
+          "label": "Maintenance Status",
+          "dataType": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Scheduled Inspection",
+            "Flagged",
+            "Suspended"
+          ],
+          "isSystem": true
+        },
+        {
+          "key": "tonerIncluded",
+          "label": "Toner Service Included",
+          "dataType": "boolean",
+          "required": true,
+          "description": "If unchecked, this contract covers parts and labour only and excludes toner auto-replenishment.",
+          "isSystem": true
+        },
+        {
+          "key": "tonerTier",
+          "label": "Toner Supply Tier",
+          "dataType": "select",
+          "required": false,
+          "options": [
+            "Standard CMYK Auto-Ship",
+            "High-Yield Enterprise"
+          ],
+          "conditionalHideWhen": {
+            "fieldKey": "tonerIncluded",
+            "equalsValue": false
+          },
+          "isSystem": true
+        },
+        {
+          "key": "tonerAutoShip",
+          "label": "Automated Toner Dispatch",
+          "dataType": "boolean",
+          "required": false,
+          "conditionalHideWhen": {
+            "fieldKey": "tonerIncluded",
+            "equalsValue": false
+          },
+          "isSystem": true
+        },
+        {
+          "key": "monthlyPageUsage",
+          "label": "Monthly Page Usage",
+          "dataType": "number",
+          "required": true,
+          "unit": "pages/mo",
+          "isSystem": true
+        },
+        {
+          "key": "pageAllowance",
+          "label": "Page Allowance",
+          "dataType": "number",
+          "required": true,
+          "unit": "pages/mo",
+          "isSystem": true
+        },
+        {
+          "key": "leaseDurationMonths",
+          "label": "Lease Duration",
+          "dataType": "number",
+          "required": true,
+          "unit": "months",
+          "isSystem": true
+        },
+        {
+          "key": "serviceFlags",
+          "label": "Service Flags",
+          "dataType": "number",
+          "required": true,
+          "unit": "flags",
+          "isSystem": true
+        }
+      ]
+    },
+    {
+      "id": "software_licence",
+      "name": "Software Licences",
+      "shortLabel": "Software Licences",
+      "description": "Commercial document workflow, print management, and enterprise SaaS seat licences sold through Canon partner channels.",
+      "fields": [
+        {
+          "key": "softwareName",
+          "label": "Software Name",
+          "dataType": "string",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "dataType": "string",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "licenceSeats",
+          "label": "Licence Seats",
+          "dataType": "number",
+          "required": true,
+          "unit": "seats",
+          "isSystem": true
+        },
+        {
+          "key": "activeSeatUtilization",
+          "label": "Active Seats Used",
+          "dataType": "number",
+          "required": false,
+          "unit": "seats",
+          "isSystem": true
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "dataType": "date",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "subscriptionTier",
+          "label": "Subscription Tier",
+          "dataType": "select",
+          "required": true,
+          "options": [
+            "Standard",
+            "Pro",
+            "Enterprise"
+          ],
+          "isSystem": true
+        },
+        {
+          "key": "autoRenew",
+          "label": "Auto-Renew Status",
+          "dataType": "boolean",
+          "required": true,
+          "isSystem": true
+        }
+      ]
+    },
+    {
+      "id": "managed_it",
+      "name": "Managed IT Services",
+      "shortLabel": "Managed IT",
+      "description": "24/7 endpoint monitoring, print security governance, and network infrastructure management agreements.",
+      "fields": [
+        {
+          "key": "supportedDevices",
+          "label": "Supported Devices",
+          "dataType": "number",
+          "required": true,
+          "unit": "devices",
+          "isSystem": true
+        },
+        {
+          "key": "capacityLimit",
+          "label": "Capacity Limit",
+          "dataType": "number",
+          "required": true,
+          "unit": "devices",
+          "isSystem": true
+        },
+        {
+          "key": "serviceResponseTime",
+          "label": "Service Response Time",
+          "dataType": "string",
+          "required": true,
+          "isSystem": true
+        },
+        {
+          "key": "uptimePercentage",
+          "label": "Uptime Percentage",
+          "dataType": "number",
+          "required": true,
+          "unit": "%",
+          "isSystem": true
+        },
+        {
+          "key": "supportLevel",
+          "label": "Support Level",
+          "dataType": "select",
+          "required": true,
+          "options": [
+            "Business Hours Silver",
+            "24/7 Gold",
+            "Dedicated NOC Platinum"
+          ],
+          "isSystem": true
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "HW-STD-14K",
+      "name": "Canon Office Care 14K (No Toner)",
+      "subscriptionType": "hardware_maintenance",
+      "billingFrequency": "monthly",
+      "baseCost": 420,
+      "monthlyEquivalentBaseCost": 420,
+      "includedUnits": 14000,
+      "unitLabel": "pages/mo",
+      "overageRatePerUnit": 0.028,
+      "eligibilityRule": "imageRUNNER ADVANCE DX series, parts & labour only (excludes toner).",
+      "targetSegment": "Mid-volume legal and corporate offices",
+      "tonerIncluded": false
+    },
+    {
+      "id": "HW-HIGHVOL-22K",
+      "name": "Canon Office Care 22K (No Toner)",
+      "subscriptionType": "hardware_maintenance",
+      "billingFrequency": "monthly",
+      "baseCost": 485,
+      "monthlyEquivalentBaseCost": 485,
+      "includedUnits": 22000,
+      "unitLabel": "pages/mo",
+      "overageRatePerUnit": 0.018,
+      "eligibilityRule": "Eligible for DX C5860i / 4845i accounts averaging >15,500 pages/mo.",
+      "targetSegment": "High-volume document workflows",
+      "tonerIncluded": false
+    },
+    {
+      "id": "HW-PRO-30K",
+      "name": "Canon Production Plus 30K",
+      "subscriptionType": "hardware_maintenance",
+      "billingFrequency": "monthly",
+      "baseCost": 890,
+      "monthlyEquivalentBaseCost": 890,
+      "includedUnits": 30000,
+      "unitLabel": "pages/mo",
+      "overageRatePerUnit": 0.015,
+      "eligibilityRule": "imagePRESS & high-duty production units with toner included.",
+      "targetSegment": "Print rooms and logistics hubs",
+      "tonerIncluded": true
+    },
+    {
+      "id": "HW-FLEX-10K",
+      "name": "Canon Essentials 10K (With Toner)",
+      "subscriptionType": "hardware_maintenance",
+      "billingFrequency": "monthly",
+      "baseCost": 390,
+      "monthlyEquivalentBaseCost": 390,
+      "includedUnits": 10000,
+      "unitLabel": "pages/mo",
+      "overageRatePerUnit": 0.026,
+      "eligibilityRule": "Available at renewal or mid-term downgrade for units under 10,000 pages/mo.",
+      "targetSegment": "Distributed clinics and branch offices",
+      "tonerIncluded": true
+    },
+    {
+      "id": "SW-ADOBE-ENT",
+      "name": "Adobe Acrobat Enterprise Channel",
+      "subscriptionType": "software_licence",
+      "billingFrequency": "annual",
+      "baseCost": 11880,
+      "monthlyEquivalentBaseCost": 990,
+      "includedUnits": 45,
+      "unitLabel": "seats",
+      "overageRatePerUnit": 22,
+      "eligibilityRule": "Minimum 25 seats on multi-year Canon partner agreement.",
+      "targetSegment": "Document-intensive legal and healthcare teams"
+    },
+    {
+      "id": "SW-UNIFLOW-PRO",
+      "name": "uniFLOW Online Pro Seat Bundle",
+      "subscriptionType": "software_licence",
+      "billingFrequency": "annual",
+      "baseCost": 5400,
+      "monthlyEquivalentBaseCost": 450,
+      "includedUnits": 60,
+      "unitLabel": "seats",
+      "overageRatePerUnit": 8,
+      "eligibilityRule": "Compatible with all imageRUNNER ADVANCE DX fleets.",
+      "targetSegment": "Secure cloud print & scan governance"
+    },
+    {
+      "id": "SW-M365-RIGHTSIZE",
+      "name": "Microsoft 365 Business Premium Pool",
+      "subscriptionType": "software_licence",
+      "billingFrequency": "monthly",
+      "baseCost": 1440,
+      "monthlyEquivalentBaseCost": 1440,
+      "includedUnits": 60,
+      "unitLabel": "seats",
+      "overageRatePerUnit": 26,
+      "eligibilityRule": "Right-sized 60-seat commitment when active seat utilization < 70%.",
+      "targetSegment": "Organizations consolidating unused SaaS seats"
+    },
+    {
+      "id": "MIT-GOLD-75",
+      "name": "Managed Endpoint & Print Security Gold (75)",
+      "subscriptionType": "managed_it",
+      "billingFrequency": "monthly",
+      "baseCost": 1850,
+      "monthlyEquivalentBaseCost": 1850,
+      "includedUnits": 75,
+      "unitLabel": "devices",
+      "overageRatePerUnit": 28,
+      "eligibilityRule": "Includes 15-minute SLA and 99.9% uptime guarantee.",
+      "targetSegment": "Regulated professional services"
+    },
+    {
+      "id": "MIT-PLAT-120",
+      "name": "Dedicated NOC Platinum (120 Devices)",
+      "subscriptionType": "managed_it",
+      "billingFrequency": "monthly",
+      "baseCost": 2790,
+      "monthlyEquivalentBaseCost": 2790,
+      "includedUnits": 120,
+      "unitLabel": "devices",
+      "overageRatePerUnit": 24,
+      "eligibilityRule": "Recommended when endpoint count exceeds 85% of 75-device capacity.",
+      "targetSegment": "Multi-site healthcare and energy networks"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "planId": "HW-STD-14K",
+      "product": "Canon imageRUNNER ADVANCE DX C5860i Maintenance",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-03-01",
+      "renewalDate": "2027-03-01",
+      "billingFrequency": "monthly",
+      "cost": 420,
+      "monthlyEquivalentCost": 420,
+      "status": "attention_required",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-03-01T09:00:00Z",
+      "customFields": {
+        "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+        "serialNumber": "CAN-DX58-88412",
+        "maintenanceStatus": "Flagged",
+        "tonerIncluded": false,
+        "monthlyPageUsage": 18400,
+        "pageAllowance": 14000,
+        "leaseDurationMonths": 36,
+        "serviceFlags": 2
+      }
+    },
+    {
+      "id": "SUB-1002",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "planId": "SW-ADOBE-ENT",
+      "product": "Adobe Acrobat Pro Enterprise (45 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-10-15",
+      "renewalDate": "2027-10-15",
+      "billingFrequency": "annual",
+      "cost": 11880,
+      "monthlyEquivalentCost": 990,
+      "status": "active",
+      "legacySourceSystem": "Partner Cloud Licensing Hub",
+      "createdAt": "2025-10-15T10:30:00Z",
+      "customFields": {
+        "softwareName": "Adobe Acrobat Pro",
+        "vendor": "Adobe",
+        "licenceSeats": 45,
+        "activeSeatUtilization": 42,
+        "expiryDate": "2027-10-15",
+        "subscriptionTier": "Enterprise",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1003",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "planId": "MIT-GOLD-75",
+      "product": "Canon Managed Endpoint & Print Security",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-01-10",
+      "renewalDate": "2027-01-10",
+      "billingFrequency": "monthly",
+      "cost": 1850,
+      "monthlyEquivalentCost": 1850,
+      "status": "renewal_due",
+      "legacySourceSystem": "NorthStar NOC Portal",
+      "createdAt": "2026-01-10T08:15:00Z",
+      "customFields": {
+        "supportedDevices": 62,
+        "capacityLimit": 75,
+        "serviceResponseTime": "15 min SLA",
+        "uptimePercentage": 99.94,
+        "supportLevel": "24/7 Gold"
+      }
+    },
+    {
+      "id": "SUB-1004",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "planId": "SW-UNIFLOW-PRO",
+      "product": "uniFLOW Online Cloud Print Governance",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-12-20",
+      "renewalDate": "2026-12-20",
+      "billingFrequency": "annual",
+      "cost": 5400,
+      "monthlyEquivalentCost": 450,
+      "status": "renewal_due",
+      "legacySourceSystem": "Canon Cloud Hub",
+      "createdAt": "2025-12-20T11:00:00Z",
+      "customFields": {
+        "softwareName": "uniFLOW Online",
+        "vendor": "Canon",
+        "licenceSeats": 60,
+        "activeSeatUtilization": 54,
+        "expiryDate": "2026-12-20",
+        "subscriptionTier": "Pro",
+        "autoRenew": false
+      }
+    },
+    {
+      "id": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "planId": "HW-PRO-30K",
+      "product": "Canon imagePRESS C270 Production Print Care",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-05-01",
+      "renewalDate": "2027-05-01",
+      "billingFrequency": "monthly",
+      "cost": 890,
+      "monthlyEquivalentCost": 890,
+      "status": "active",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-05-01T10:00:00Z",
+      "customFields": {
+        "deviceModel": "imagePRESS C270",
+        "serialNumber": "CAN-IPC2-39104",
+        "maintenanceStatus": "Flagged",
+        "tonerIncluded": true,
+        "tonerTier": "High-Yield Enterprise",
+        "tonerAutoShip": true,
+        "monthlyPageUsage": 8200,
+        "pageAllowance": 30000,
+        "leaseDurationMonths": 48,
+        "serviceFlags": 1
+      }
+    },
+    {
+      "id": "SUB-1006",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "planId": "MIT-GOLD-75",
+      "product": "Warehouse Print & Barcode Fleet SLA",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-02-01",
+      "renewalDate": "2027-02-01",
+      "billingFrequency": "monthly",
+      "cost": 1850,
+      "monthlyEquivalentCost": 1850,
+      "status": "active",
+      "legacySourceSystem": "NorthStar NOC Portal",
+      "createdAt": "2026-02-01T09:30:00Z",
+      "customFields": {
+        "supportedDevices": 68,
+        "capacityLimit": 75,
+        "serviceResponseTime": "15 min SLA",
+        "uptimePercentage": 99.89,
+        "supportLevel": "24/7 Gold"
+      }
+    },
+    {
+      "id": "SUB-1007",
+      "customerId": "CUST-003",
+      "dealerId": "DLR-NORTH",
+      "planId": "SW-ADOBE-ENT",
+      "product": "Adobe Acrobat Pro Team Pool (30 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-10-28",
+      "renewalDate": "2027-10-28",
+      "billingFrequency": "annual",
+      "cost": 7920,
+      "monthlyEquivalentCost": 660,
+      "status": "active",
+      "legacySourceSystem": "Partner Cloud Licensing Hub",
+      "createdAt": "2025-10-28T13:15:00Z",
+      "customFields": {
+        "softwareName": "Adobe Acrobat Pro",
+        "vendor": "Adobe",
+        "licenceSeats": 30,
+        "activeSeatUtilization": 27,
+        "expiryDate": "2027-10-28",
+        "subscriptionTier": "Pro",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1008",
+      "customerId": "CUST-003",
+      "dealerId": "DLR-NORTH",
+      "planId": "HW-FLEX-10K",
+      "product": "Canon imagePROGRAF TM-355 CAD Maintenance",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-07-15",
+      "renewalDate": "2026-12-30",
+      "billingFrequency": "monthly",
+      "cost": 390,
+      "monthlyEquivalentCost": 390,
+      "status": "renewal_due",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-07-15T14:20:00Z",
+      "customFields": {
+        "deviceModel": "imagePROGRAF TM-355",
+        "serialNumber": "CAN-IPGF-51209",
+        "maintenanceStatus": "Active",
+        "tonerIncluded": true,
+        "tonerTier": "Standard CMYK Auto-Ship",
+        "tonerAutoShip": true,
+        "monthlyPageUsage": 4800,
+        "pageAllowance": 10000,
+        "leaseDurationMonths": 36,
+        "serviceFlags": 0
+      }
+    },
+    {
+      "id": "SUB-1009",
+      "customerId": "CUST-003",
+      "dealerId": "DLR-NORTH",
+      "planId": "MIT-GOLD-75",
+      "product": "CAD Plotter & Studio Network Assurance",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-04-01",
+      "renewalDate": "2027-04-01",
+      "billingFrequency": "quarterly",
+      "cost": 5400,
+      "monthlyEquivalentCost": 1800,
+      "status": "active",
+      "legacySourceSystem": "NorthStar NOC Portal",
+      "createdAt": "2026-04-01T09:00:00Z",
+      "customFields": {
+        "supportedDevices": 44,
+        "capacityLimit": 75,
+        "serviceResponseTime": "30 min SLA",
+        "uptimePercentage": 99.97,
+        "supportLevel": "Business Hours Silver"
+      }
+    },
+    {
+      "id": "SUB-1010",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "planId": "SW-M365-RIGHTSIZE",
+      "product": "Microsoft 365 E3 Enterprise Suite (80 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-10-12",
+      "renewalDate": "2027-10-12",
+      "billingFrequency": "monthly",
+      "cost": 2880,
+      "monthlyEquivalentCost": 2880,
+      "status": "active",
+      "legacySourceSystem": "Partner Cloud Licensing Hub",
+      "createdAt": "2025-10-12T10:45:00Z",
+      "customFields": {
+        "softwareName": "Microsoft 365 E3",
+        "vendor": "Microsoft",
+        "licenceSeats": 80,
+        "activeSeatUtilization": 46,
+        "expiryDate": "2027-10-12",
+        "subscriptionTier": "Enterprise",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "HW-STD-14K",
+      "product": "Canon imageRUNNER ADVANCE DX C5860i Clinic Fleet",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-04-01",
+      "renewalDate": "2027-04-01",
+      "billingFrequency": "monthly",
+      "cost": 420,
+      "monthlyEquivalentCost": 420,
+      "status": "attention_required",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-04-01T09:00:00Z",
+      "customFields": {
+        "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+        "serialNumber": "CAN-DX58-60219",
+        "maintenanceStatus": "Flagged",
+        "tonerIncluded": false,
+        "monthlyPageUsage": 17100,
+        "pageAllowance": 14000,
+        "leaseDurationMonths": 36,
+        "serviceFlags": 2
+      }
+    },
+    {
+      "id": "SUB-1012",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "MIT-GOLD-75",
+      "product": "HIPAA/PIPA Clinic Endpoint & Print Security",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-01-15",
+      "renewalDate": "2027-01-15",
+      "billingFrequency": "monthly",
+      "cost": 1850,
+      "monthlyEquivalentCost": 1850,
+      "status": "renewal_due",
+      "legacySourceSystem": "Pacific Cloud RMM",
+      "createdAt": "2026-01-15T11:00:00Z",
+      "customFields": {
+        "supportedDevices": 71,
+        "capacityLimit": 75,
+        "serviceResponseTime": "15 min SLA",
+        "uptimePercentage": 99.91,
+        "supportLevel": "24/7 Gold"
+      }
+    },
+    {
+      "id": "SUB-1013",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "SW-ADOBE-ENT",
+      "product": "Adobe Acrobat Standard Clinic Records (50 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-10-05",
+      "renewalDate": "2027-10-05",
+      "billingFrequency": "annual",
+      "cost": 10800,
+      "monthlyEquivalentCost": 900,
+      "status": "active",
+      "legacySourceSystem": "Partner Cloud Licensing Hub",
+      "createdAt": "2025-10-05T09:10:00Z",
+      "customFields": {
+        "softwareName": "Adobe Acrobat Standard",
+        "vendor": "Adobe",
+        "licenceSeats": 50,
+        "activeSeatUtilization": 48,
+        "expiryDate": "2027-10-05",
+        "subscriptionTier": "Standard",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1014",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "SW-UNIFLOW-PRO",
+      "product": "Therefore Online Medical Records Capture",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-12-10",
+      "renewalDate": "2026-12-10",
+      "billingFrequency": "annual",
+      "cost": 4920,
+      "monthlyEquivalentCost": 410,
+      "status": "renewal_due",
+      "legacySourceSystem": "Canon Cloud Hub",
+      "createdAt": "2025-12-10T15:00:00Z",
+      "customFields": {
+        "softwareName": "Therefore Online",
+        "vendor": "Canon",
+        "licenceSeats": 40,
+        "activeSeatUtilization": 37,
+        "expiryDate": "2026-12-10",
+        "subscriptionTier": "Enterprise",
+        "autoRenew": false
+      }
+    },
+    {
+      "id": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "HW-STD-14K",
+      "product": "Canon imageRUNNER ADVANCE DX 4845i HQ Care",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-06-01",
+      "renewalDate": "2027-06-01",
+      "billingFrequency": "monthly",
+      "cost": 420,
+      "monthlyEquivalentCost": 420,
+      "status": "attention_required",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-06-01T10:00:00Z",
+      "customFields": {
+        "deviceModel": "imageRUNNER ADVANCE DX 4845i",
+        "serialNumber": "CAN-DX48-44901",
+        "maintenanceStatus": "Flagged",
+        "tonerIncluded": true,
+        "tonerTier": "High-Yield Enterprise",
+        "tonerAutoShip": true,
+        "monthlyPageUsage": 19200,
+        "pageAllowance": 14000,
+        "leaseDurationMonths": 36,
+        "serviceFlags": 2
+      }
+    },
+    {
+      "id": "SUB-1016",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "MIT-PLAT-120",
+      "product": "Calgary NOC Infrastructure & Print Governance",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-03-01",
+      "renewalDate": "2027-03-01",
+      "billingFrequency": "monthly",
+      "cost": 2790,
+      "monthlyEquivalentCost": 2790,
+      "status": "active",
+      "legacySourceSystem": "Pacific Cloud RMM",
+      "createdAt": "2026-03-01T08:00:00Z",
+      "customFields": {
+        "supportedDevices": 96,
+        "capacityLimit": 120,
+        "serviceResponseTime": "10 min SLA",
+        "uptimePercentage": 99.98,
+        "supportLevel": "Dedicated NOC Platinum"
+      }
+    },
+    {
+      "id": "SUB-1017",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "SW-UNIFLOW-PRO",
+      "product": "uniFLOW Online Enterprise (95 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2026-02-15",
+      "renewalDate": "2027-02-15",
+      "billingFrequency": "annual",
+      "cost": 7680,
+      "monthlyEquivalentCost": 640,
+      "status": "active",
+      "legacySourceSystem": "Canon Cloud Hub",
+      "createdAt": "2026-02-15T12:00:00Z",
+      "customFields": {
+        "softwareName": "uniFLOW Online",
+        "vendor": "Canon",
+        "licenceSeats": 95,
+        "activeSeatUtilization": 88,
+        "expiryDate": "2027-02-15",
+        "subscriptionTier": "Enterprise",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1018",
+      "customerId": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "SW-ADOBE-ENT",
+      "product": "Adobe Acrobat Pro Blueprint Review (25 Seats)",
+      "subscriptionType": "software_licence",
+      "startDate": "2025-06-30",
+      "renewalDate": "2027-06-30",
+      "billingFrequency": "annual",
+      "cost": 6600,
+      "monthlyEquivalentCost": 550,
+      "status": "active",
+      "legacySourceSystem": "Partner Cloud Licensing Hub",
+      "createdAt": "2025-06-30T14:00:00Z",
+      "customFields": {
+        "softwareName": "Adobe Acrobat Pro",
+        "vendor": "Adobe",
+        "licenceSeats": 25,
+        "activeSeatUtilization": 22,
+        "expiryDate": "2027-06-30",
+        "subscriptionTier": "Pro",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "SUB-1019",
+      "customerId": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "HW-FLEX-10K",
+      "product": "Canon imageRUNNER ADVANCE DX 4845i Branch Unit",
+      "subscriptionType": "hardware_maintenance",
+      "startDate": "2025-09-01",
+      "renewalDate": "2027-09-01",
+      "billingFrequency": "monthly",
+      "cost": 390,
+      "monthlyEquivalentCost": 390,
+      "status": "active",
+      "legacySourceSystem": "Canon eMaintenance Legacy",
+      "createdAt": "2025-09-01T09:45:00Z",
+      "customFields": {
+        "deviceModel": "imageRUNNER ADVANCE DX 4845i",
+        "serialNumber": "CAN-DX48-11820",
+        "maintenanceStatus": "Scheduled Inspection",
+        "tonerIncluded": true,
+        "tonerTier": "Standard CMYK Auto-Ship",
+        "tonerAutoShip": true,
+        "monthlyPageUsage": 3100,
+        "pageAllowance": 10000,
+        "leaseDurationMonths": 36,
+        "serviceFlags": 0
+      }
+    },
+    {
+      "id": "SUB-1020",
+      "customerId": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "planId": "MIT-GOLD-75",
+      "product": "Coastal Branch Print & Firewall Monitoring",
+      "subscriptionType": "managed_it",
+      "startDate": "2026-01-05",
+      "renewalDate": "2026-12-28",
+      "billingFrequency": "monthly",
+      "cost": 1850,
+      "monthlyEquivalentCost": 1850,
+      "status": "renewal_due",
+      "legacySourceSystem": "Pacific Cloud RMM",
+      "createdAt": "2026-01-05T11:20:00Z",
+      "customFields": {
+        "supportedDevices": 21,
+        "capacityLimit": 75,
+        "serviceResponseTime": "30 min SLA",
+        "uptimePercentage": 99.92,
+        "supportLevel": "Business Hours Silver"
+      }
+    }
+  ],
+  "usageRecords": [
+    {
+      "id": "USG-101",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-06",
+      "unitsUsed": 17900,
+      "includedAllowance": 14000,
+      "overageUnits": 3900,
+      "overageCost": 109.2,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-102",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-07",
+      "unitsUsed": 18200,
+      "includedAllowance": 14000,
+      "overageUnits": 4200,
+      "overageCost": 117.6,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-103",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-08",
+      "unitsUsed": 18600,
+      "includedAllowance": 14000,
+      "overageUnits": 4600,
+      "overageCost": 128.8,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-104",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-09",
+      "unitsUsed": 18100,
+      "includedAllowance": 14000,
+      "overageUnits": 4100,
+      "overageCost": 114.8,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-105",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-10",
+      "unitsUsed": 19200,
+      "includedAllowance": 14000,
+      "overageUnits": 5200,
+      "overageCost": 145.6,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-106",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-11",
+      "unitsUsed": 18400,
+      "includedAllowance": 14000,
+      "overageUnits": 4400,
+      "overageCost": 123.2,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-201",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-06",
+      "unitsUsed": 7900,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-202",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-07",
+      "unitsUsed": 8400,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-203",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-08",
+      "unitsUsed": 8100,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-204",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-09",
+      "unitsUsed": 8500,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-205",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-10",
+      "unitsUsed": 8100,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-206",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-11",
+      "unitsUsed": 8200,
+      "includedAllowance": 30000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-301",
+      "subscriptionId": "SUB-1010",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-09",
+      "unitsUsed": 48,
+      "includedAllowance": 80,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "seats"
+    },
+    {
+      "id": "USG-302",
+      "subscriptionId": "SUB-1010",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-10",
+      "unitsUsed": 47,
+      "includedAllowance": 80,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "seats"
+    },
+    {
+      "id": "USG-303",
+      "subscriptionId": "SUB-1010",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "billingMonth": "2026-11",
+      "unitsUsed": 46,
+      "includedAllowance": 80,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "seats"
+    },
+    {
+      "id": "USG-401",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-08",
+      "unitsUsed": 16800,
+      "includedAllowance": 14000,
+      "overageUnits": 2800,
+      "overageCost": 78.4,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-402",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-09",
+      "unitsUsed": 17000,
+      "includedAllowance": 14000,
+      "overageUnits": 3000,
+      "overageCost": 84,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-403",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-10",
+      "unitsUsed": 17500,
+      "includedAllowance": 14000,
+      "overageUnits": 3500,
+      "overageCost": 98,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-404",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-11",
+      "unitsUsed": 17100,
+      "includedAllowance": 14000,
+      "overageUnits": 3100,
+      "overageCost": 86.8,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-501",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-08",
+      "unitsUsed": 18900,
+      "includedAllowance": 14000,
+      "overageUnits": 4900,
+      "overageCost": 137.2,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-502",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-09",
+      "unitsUsed": 19400,
+      "includedAllowance": 14000,
+      "overageUnits": 5400,
+      "overageCost": 151.2,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-503",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-10",
+      "unitsUsed": 19300,
+      "includedAllowance": 14000,
+      "overageUnits": 5300,
+      "overageCost": 148.4,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-504",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-11",
+      "unitsUsed": 19200,
+      "includedAllowance": 14000,
+      "overageUnits": 5200,
+      "overageCost": 145.6,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-601",
+      "subscriptionId": "SUB-1019",
+      "customerId": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-10",
+      "unitsUsed": 3000,
+      "includedAllowance": 10000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    },
+    {
+      "id": "USG-602",
+      "subscriptionId": "SUB-1019",
+      "customerId": "CUST-006",
+      "dealerId": "DLR-PACIFIC",
+      "billingMonth": "2026-11",
+      "unitsUsed": 3100,
+      "includedAllowance": 10000,
+      "overageUnits": 0,
+      "overageCost": 0,
+      "unitLabel": "pages"
+    }
+  ],
+  "serviceEvents": [
+    {
+      "id": "EVT-501",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+      "occurredAt": "2026-11-17",
+      "eventType": "service_flag",
+      "severity": "medium",
+      "description": "Fuser roller thermal variance flagged during high-volume batch run.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-502",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+      "occurredAt": "2026-11-19",
+      "eventType": "service_flag",
+      "severity": "high",
+      "description": "Finisher staple cartridge actuator sensor triggered fault code E531.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-503",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+      "occurredAt": "2026-11-18",
+      "eventType": "service_flag",
+      "severity": "medium",
+      "description": "ADF document feed roller wear counter crossed 92% preventive threshold.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-504",
+      "subscriptionId": "SUB-1011",
+      "customerId": "CUST-004",
+      "dealerId": "DLR-PACIFIC",
+      "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+      "occurredAt": "2026-11-20",
+      "eventType": "service_flag",
+      "severity": "low",
+      "description": "Cyan drum unit density calibration drift warning logged.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-505",
+      "subscriptionId": "SUB-1001",
+      "customerId": "CUST-001",
+      "dealerId": "DLR-NORTH",
+      "deviceModel": "imageRUNNER ADVANCE DX C5860i",
+      "occurredAt": "2026-10-14",
+      "eventType": "service_flag",
+      "severity": "low",
+      "description": "Paper tray 2 lift sensor reset completed during quarterly check.",
+      "resolved": true
+    },
+    {
+      "id": "EVT-506",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "deviceModel": "imageRUNNER ADVANCE DX 4845i",
+      "occurredAt": "2026-11-16",
+      "eventType": "service_flag",
+      "severity": "high",
+      "description": "Transfer belt alignment warning triggered under sustained print queue.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-507",
+      "subscriptionId": "SUB-1015",
+      "customerId": "CUST-005",
+      "dealerId": "DLR-PACIFIC",
+      "deviceModel": "imageRUNNER ADVANCE DX 4845i",
+      "occurredAt": "2026-11-20",
+      "eventType": "service_flag",
+      "severity": "medium",
+      "description": "Waste toner container sensor alert (customer toner tier active).",
+      "resolved": false
+    },
+    {
+      "id": "EVT-508",
+      "subscriptionId": "SUB-1005",
+      "customerId": "CUST-002",
+      "dealerId": "DLR-NORTH",
+      "deviceModel": "imagePRESS C270",
+      "occurredAt": "2026-11-19",
+      "eventType": "service_flag",
+      "severity": "low",
+      "description": "Registration skew tolerance check requested ahead of Q4 print batch.",
+      "resolved": false
+    },
+    {
+      "id": "EVT-509",
+      "subscriptionId": "SUB-1008",
+      "customerId": "CUST-003",
+      "dealerId": "DLR-NORTH",
+      "deviceModel": "imagePROGRAF TM-355",
+      "occurredAt": "2026-11-18",
+      "eventType": "firmware_check",
+      "severity": "low",
+      "description": "Routine remote firmware security patch v4.12 applied cleanly.",
+      "resolved": true
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "AUD-94246",
+      "timestamp": "2026-11-21T23:30:31.076Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-56531",
+      "timestamp": "2026-11-21T22:39:09.475Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Executed report: Query dealer records",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_customer = CUST-001"
+      ],
+      "calculationPerformed": "Blocked before execution (customer isolation policy)"
+    },
+    {
+      "id": "AUD-37497",
+      "timestamp": "2026-11-21T22:39:09.470Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Executed report: Count my subscriptions",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1002",
+        "SUB-1003",
+        "SUB-1004"
+      ],
+      "appliedFilters": [
+        "scope = customerId:CUST-001"
+      ],
+      "calculationPerformed": "COUNT(subscriptions) = 4"
+    },
+    {
+      "id": "AUD-59987",
+      "timestamp": "2026-11-21T22:39:09.464Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-customer parameter request rejected (requested customerId=CUST-002) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-43235",
+      "timestamp": "2026-11-21T22:39:09.460Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-NORTH) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-83858",
+      "timestamp": "2026-11-21T22:39:09.453Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": null,
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-54480",
+      "timestamp": "2026-11-21T22:39:09.448Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-NORTH) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-65051",
+      "timestamp": "2026-11-21T22:39:09.437Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Priya Nair (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-93997",
+      "timestamp": "2026-11-21T22:39:09.434Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-PACIFIC) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-91609",
+      "timestamp": "2026-11-21T22:39:09.423Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-10752",
+      "timestamp": "2026-11-21T22:39:09.407Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-84505",
+      "timestamp": "2026-11-21T22:31:09.019Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Executed report: Active flags on DX C5860i",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1011"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "deviceModel contains \"DX C5860i\"",
+        "eventType eq \"service_flag\"",
+        "resolved eq \"false\""
+      ],
+      "calculationPerformed": "COUNT(service_events) = 4"
+    },
+    {
+      "id": "AUD-23296",
+      "timestamp": "2026-11-21T22:31:09.013Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Executed report: Sum of Adobe Acrobat seats expiring in October 2027",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1002",
+        "SUB-1007",
+        "SUB-1013"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "product contains \"Adobe Acrobat\"",
+        "renewalDate month_eq \"2027-10\""
+      ],
+      "calculationPerformed": "SUM(licenceSeats) across 3 authorized records = 125"
+    },
+    {
+      "id": "AUD-64203",
+      "timestamp": "2026-11-21T22:31:02.816Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-customer parameter request rejected (requested customerId=CUST-002) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-11636",
+      "timestamp": "2026-11-21T22:31:02.806Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-10910",
+      "timestamp": "2026-11-21T22:31:02.800Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-PACIFIC) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-27864",
+      "timestamp": "2026-11-21T22:31:02.790Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-59887",
+      "timestamp": "2026-11-21T22:30:41.167Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Executed report: Active flags on DX C5860i",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1011"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "deviceModel contains \"DX C5860i\"",
+        "eventType eq \"service_flag\"",
+        "resolved eq \"false\""
+      ],
+      "calculationPerformed": "COUNT(service_events) = 4"
+    },
+    {
+      "id": "AUD-82991",
+      "timestamp": "2026-11-21T22:30:41.158Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Executed report: Sum of Adobe Acrobat seats expiring in October 2027",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1002",
+        "SUB-1007",
+        "SUB-1013"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "product contains \"Adobe Acrobat\"",
+        "renewalDate month_eq \"2027-10\""
+      ],
+      "calculationPerformed": "SUM(licenceSeats) across 3 authorized records = 125"
+    },
+    {
+      "id": "AUD-52390",
+      "timestamp": "2026-11-21T21:55:15.540Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-12606",
+      "timestamp": "2026-11-21T21:55:15.529Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-60950",
+      "timestamp": "2026-11-21T21:55:15.514Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Priya Nair (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-94758",
+      "timestamp": "2026-11-21T21:55:15.501Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-75274",
+      "timestamp": "2026-11-21T21:55:15.449Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-90546",
+      "timestamp": "2026-11-21T21:15:01.153Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-93789",
+      "timestamp": "2026-11-21T21:15:01.136Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Priya Nair (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-93600",
+      "timestamp": "2026-11-21T21:15:01.117Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-46354",
+      "timestamp": "2026-11-21T21:15:01.040Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-77608",
+      "timestamp": "2026-11-21T21:04:53.926Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked or withheld query: \"List all customer emails and phone numbers.\"",
+      "queryText": "List all customer emails and phone numbers.",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "role = canon_admin"
+      ],
+      "calculationPerformed": "Blocked before execution (PII restriction policy)"
+    },
+    {
+      "id": "AUD-98323",
+      "timestamp": "2026-11-21T21:04:43.475Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-87402",
+      "timestamp": "2026-11-21T21:04:05.012Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "insight_summary",
+      "summary": "Generated Gemini executive briefing across 26 authorized proactive insights",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1004",
+        "SUB-1005",
+        "SUB-1006",
+        "SUB-1010",
+        "SUB-1011",
+        "SUB-1012",
+        "SUB-1014",
+        "SUB-1015",
+        "SUB-1003",
+        "SUB-1008",
+        "SUB-1016",
+        "SUB-1017",
+        "SUB-1019",
+        "SUB-1020",
+        "SUB-1002",
+        "SUB-1013"
+      ]
+    },
+    {
+      "id": "AUD-68047",
+      "timestamp": "2026-11-21T21:04:00.010Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Count subscriptions for customer CUST-001 → COUNT(subscriptions) = 4",
+      "queryText": "How many subscriptions does customer CUST-001 have?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1002",
+        "SUB-1003",
+        "SUB-1004"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "customerId eq \"CUST-001\""
+      ],
+      "calculationPerformed": "COUNT(subscriptions) = 4"
+    },
+    {
+      "id": "AUD-33882",
+      "timestamp": "2026-11-21T21:03:53.312Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Count service flags reported for imageRUNNER ADVANCE DX C5860i this week (2026-11-15 to 2026-11-21) → COUNT(service_events) = 4",
+      "queryText": "How many service flags were reported for imageRUNNER ADVANCE DX C5860i this week?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1011"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "eventType eq \"service_flag\"",
+        "deviceModel contains \"DX C5860i\"",
+        "occurredAt between 2026-11-15 and 2026-11-21"
+      ],
+      "calculationPerformed": "COUNT(service_events) = 4"
+    },
+    {
+      "id": "AUD-16800",
+      "timestamp": "2026-11-21T21:03:47.979Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-79215",
+      "timestamp": "2026-11-21T21:01:51.480Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked or withheld query: \"List all customer emails and phone numbers.\"",
+      "queryText": "List all customer emails and phone numbers.",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "role = canon_admin"
+      ],
+      "calculationPerformed": "Blocked before execution (PII restriction policy)"
+    },
+    {
+      "id": "AUD-17313",
+      "timestamp": "2026-11-21T21:01:43.755Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Sum licenceSeats for Adobe Acrobat subscriptions expiring in October 2027. → SUM(licenceSeats) across 3 authorized records = 125",
+      "queryText": "How many Adobe Acrobat licences expire in October 2027?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1002",
+        "SUB-1007",
+        "SUB-1013"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "softwareName contains \"Adobe Acrobat\"",
+        "expiryDate month_eq \"2027-10\""
+      ],
+      "calculationPerformed": "SUM(licenceSeats) across 3 authorized records = 125"
+    },
+    {
+      "id": "AUD-81229",
+      "timestamp": "2026-11-21T21:01:41.212Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-26945",
+      "timestamp": "2026-11-21T21:00:27.024Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Sum licence seats for Adobe Acrobat software subscriptions expiring in October 2027 → SUM(licenceSeats) across 3 authorized records = 125",
+      "queryText": "How many Adobe Acrobat licence seats expire in October 2027?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1002",
+        "SUB-1007",
+        "SUB-1013"
+      ],
+      "appliedFilters": [
+        "scope = Canon Governance (all metadata, PII stripped)",
+        "softwareName contains \"Adobe Acrobat\"",
+        "expiryDate month_eq \"2027-10\""
+      ],
+      "calculationPerformed": "SUM(licenceSeats) across 3 authorized records = 125"
+    },
+    {
+      "id": "AUD-31976",
+      "timestamp": "2026-11-21T20:55:18.888Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-66245",
+      "timestamp": "2026-11-21T20:55:18.878Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-56396",
+      "timestamp": "2026-11-21T20:55:18.869Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Priya Nair (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-62059",
+      "timestamp": "2026-11-21T20:55:18.851Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-72898",
+      "timestamp": "2026-11-21T20:55:18.811Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-72122",
+      "timestamp": "2026-11-21T20:43:42.942Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-52575",
+      "timestamp": "2026-11-21T20:43:42.938Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1005) (GET /api/subscriptions/SUB-1005)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-64444",
+      "timestamp": "2026-11-21T20:43:42.935Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-customer parameter request rejected (requested customerId=CUST-002) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-59076",
+      "timestamp": "2026-11-21T20:43:42.932Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-57412",
+      "timestamp": "2026-11-21T20:43:42.929Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Spoofed dealerId=DLR-PACIFIC rejected on subscription create (POST /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-92328",
+      "timestamp": "2026-11-21T20:43:42.925Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1011) (GET /api/subscriptions/SUB-1011)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-50955",
+      "timestamp": "2026-11-21T20:43:42.923Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized customer parameter request rejected (requested customerId=CUST-004) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-21339",
+      "timestamp": "2026-11-21T20:43:42.918Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-PACIFIC) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-76028",
+      "timestamp": "2026-11-21T20:43:42.913Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-99132",
+      "timestamp": "2026-11-21T20:43:42.863Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-46123",
+      "timestamp": "2026-11-21T20:43:42.858Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to CUST-001 (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-92752",
+      "timestamp": "2026-11-21T20:43:14.610Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-65265",
+      "timestamp": "2026-11-21T20:43:14.603Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1005) (GET /api/subscriptions/SUB-1005)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-48818",
+      "timestamp": "2026-11-21T20:43:14.600Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-customer parameter request rejected (requested customerId=CUST-002) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-55627",
+      "timestamp": "2026-11-21T20:43:14.596Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to David Chen (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-48925",
+      "timestamp": "2026-11-21T20:43:14.591Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Schema modification attempted by non-admin role (POST /api/schema/fields)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-47466",
+      "timestamp": "2026-11-21T20:43:14.587Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Spoofed dealerId=DLR-PACIFIC rejected on subscription create (POST /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-73869",
+      "timestamp": "2026-11-21T20:43:14.581Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1011) (GET /api/subscriptions/SUB-1011)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-30814",
+      "timestamp": "2026-11-21T20:43:14.577Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized customer parameter request rejected (requested customerId=CUST-004) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-38561",
+      "timestamp": "2026-11-21T20:43:14.568Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-PACIFIC) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-51028",
+      "timestamp": "2026-11-21T20:43:14.562Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-95323",
+      "timestamp": "2026-11-21T20:42:38.272Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1005) (GET /api/subscriptions/SUB-1005)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-73939",
+      "timestamp": "2026-11-21T20:42:38.269Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-customer parameter request rejected (requested customerId=CUST-002) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = customer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-58450",
+      "timestamp": "2026-11-21T20:42:38.266Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to David Chen (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-72033",
+      "timestamp": "2026-11-21T20:42:38.262Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Schema modification attempted by non-admin role (POST /api/schema/fields)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-39056",
+      "timestamp": "2026-11-21T20:42:38.258Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Spoofed dealerId=DLR-PACIFIC rejected on subscription create (POST /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-43216",
+      "timestamp": "2026-11-21T20:42:38.252Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized subscription detail lookup (SUB-1011) (GET /api/subscriptions/SUB-1011)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-73909",
+      "timestamp": "2026-11-21T20:42:38.247Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Unauthorized customer parameter request rejected (requested customerId=CUST-004) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-38125",
+      "timestamp": "2026-11-21T20:42:38.242Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Blocked unauthorized access attempt: Cross-dealer parameter request rejected (requested dealerId=DLR-PACIFIC) (GET /api/subscriptions)",
+      "verificationStatus": "restricted",
+      "authorizedSourceIds": [],
+      "appliedFilters": [
+        "enforced_role = dealer"
+      ],
+      "calculationPerformed": "Access denied by RBAC middleware"
+    },
+    {
+      "id": "AUD-23543",
+      "timestamp": "2026-11-21T20:42:38.236Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched simulated session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-39380",
+      "timestamp": "2026-11-21T20:16:14.094Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched active server session to Elena Vance (canon_admin)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-35656",
+      "timestamp": "2026-11-21T20:16:14.081Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "role_switch",
+      "summary": "Switched active server session to David Chen (customer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-19220",
+      "timestamp": "2026-11-21T20:16:14.070Z",
+      "userId": "dealer-pacific",
+      "userName": "Priya Nair",
+      "role": "dealer",
+      "dealerId": "DLR-PACIFIC",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched active server session to Priya Nair (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-25808",
+      "timestamp": "2026-11-21T20:16:14.054Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "role_switch",
+      "summary": "Switched active server session to Marcus Reid (dealer)",
+      "verificationStatus": "recorded",
+      "authorizedSourceIds": []
+    },
+    {
+      "id": "AUD-9001",
+      "timestamp": "2026-11-21T09:15:00Z",
+      "userId": "canon-admin",
+      "userName": "Elena Vance",
+      "role": "canon_admin",
+      "dealerId": null,
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Verified fleet-wide hardware maintenance renewal count for Q1 2027",
+      "queryText": "How many hardware maintenance subscriptions renew in Q1 2027?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001"
+      ],
+      "appliedFilters": [
+        "subscriptionType = hardware_maintenance",
+        "renewalDate between 2027-01-01 and 2027-03-31"
+      ],
+      "calculationPerformed": "COUNT(subscriptions) = 1"
+    },
+    {
+      "id": "AUD-9002",
+      "timestamp": "2026-11-21T10:05:00Z",
+      "userId": "dealer-north",
+      "userName": "Marcus Reid",
+      "role": "dealer",
+      "dealerId": "DLR-NORTH",
+      "customerId": null,
+      "actionType": "ai_query",
+      "summary": "Checked active monthly recurring revenue across NorthStar Office Systems accounts",
+      "queryText": "What is our total monthly equivalent recurring revenue across active accounts?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1002",
+        "SUB-1003",
+        "SUB-1004",
+        "SUB-1005",
+        "SUB-1006",
+        "SUB-1007",
+        "SUB-1008",
+        "SUB-1009",
+        "SUB-1010"
+      ],
+      "appliedFilters": [
+        "dealerId = DLR-NORTH"
+      ],
+      "calculationPerformed": "SUM(monthlyEquivalentCost) = $11,940/mo"
+    },
+    {
+      "id": "AUD-9003",
+      "timestamp": "2026-11-21T11:22:00Z",
+      "userId": "customer-maple",
+      "userName": "David Chen",
+      "role": "customer",
+      "dealerId": "DLR-NORTH",
+      "customerId": "CUST-001",
+      "actionType": "ai_query",
+      "summary": "Reviewed Maple Ridge Legal LLP active subscriptions and page overage status",
+      "queryText": "Which of our subscriptions have upcoming renewals or service flags?",
+      "verificationStatus": "verified",
+      "authorizedSourceIds": [
+        "SUB-1001",
+        "SUB-1003",
+        "SUB-1004"
+      ],
+      "appliedFilters": [
+        "customerId = CUST-001",
+        "status in (renewal_due, attention_required)"
+      ],
+      "calculationPerformed": "COUNT(subscriptions) = 3"
+    }
+  ]
+}
